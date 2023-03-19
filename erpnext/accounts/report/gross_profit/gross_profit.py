@@ -671,8 +671,6 @@ class GrossProfitGenerator(object):
 		if self.filters.to_date:
 			conditions += " and posting_date <= %(to_date)s"
 
-<<<<<<< HEAD
-=======
 		conditions += " and (is_return = 0 or (is_return=1 and return_against is null))"
 
 		if self.filters.item_group:
@@ -686,7 +684,6 @@ class GrossProfitGenerator(object):
 							and   st.sales_person = %(sales_person)s)
 			"""
 
->>>>>>> d0715a82eb (refactor: Ignore linked Cr Notes in Report output)
 		if self.filters.group_by == "Sales Person":
 			sales_person_cols = ", sales.sales_person, sales.allocated_amount, sales.incentives"
 			sales_team_table = "left join `tabSales Team` sales on sales.parent = `tabSales Invoice`.name"
